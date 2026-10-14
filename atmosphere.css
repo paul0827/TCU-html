@@ -1,0 +1,59 @@
+/* Calm proportions, natural materials, and an editorial reading rhythm. */
+:root{--ink:#303d37;--text:#4d534e;--muted:#6e756c;--paper:#f6f3ec;--line:#deded3;--gold:#87734f}
+body{background:var(--paper)}
+.utility{background:#eae9df;color:#555f54;padding:7px 0;letter-spacing:1px}
+header{background:rgba(246,243,236,.97)}
+.header-inner{height:106px}
+.brand-mark{border:0;border-radius:0;width:39px;height:48px;color:#68705d}
+.brand-mark svg{width:38px;height:38px}
+.brand strong{font-weight:500;letter-spacing:2px}
+.brand small{color:#707668;letter-spacing:.35px}
+nav{font-size:12px;gap:26px}
+.hero{grid-template-columns:.85fr 1.15fr;gap:75px;padding-top:77px;padding-bottom:72px}
+.hero-copy{padding-top:0}
+.hero .eyebrow{letter-spacing:3.5px;font-weight:400;font-size:11px}
+.hero .eyebrow span{width:32px}
+.hero h1{font-size:clamp(42px,4vw,58px);font-weight:500;line-height:1.65;letter-spacing:4px;margin:26px 0 24px}
+.hero p{font-size:14px;line-height:2.25;letter-spacing:.5px}
+.hero-actions{margin-top:34px;margin-bottom:45px;gap:28px}
+.button{background:#485647;font-size:12px;padding:13px 22px;letter-spacing:.7px;transition:background .25s,transform .25s}
+.button:hover{background:#354234;transform:translateY(-2px)}
+.hero-note{border-color:#b2a486;font-size:11px;color:#626959}
+.hero-note small{font-size:10px;letter-spacing:.5px}
+.hero-photo{padding:0 0 28px;position:relative}
+.hero-photo:before{display:none}
+.hero-photo:after{content:'';position:absolute;z-index:-1;width:88%;height:85%;bottom:0;right:-18px;background:#e9e7db}
+.hero-photo img{height:470px;border-radius:1px;object-position:53% 50%}
+.photo-label{position:absolute;right:20px;bottom:80px;writing-mode:vertical-rl;font-size:11px;letter-spacing:4px;color:#faf7ed;padding:19px 12px;background:#29352bb5;backdrop-filter:blur(5px)}
+.hero-photo figcaption{font-size:10px;margin-top:17px;color:#767c70;letter-spacing:.8px}
+.pathways{padding:30px 0;border-color:#cfd2c4}
+.pathways h2{font-size:18px;font-weight:500;letter-spacing:1px}
+.pathways .index{color:#898371;font-size:19px}
+.pathways .arrow{font-size:19px;transition:transform .25s}
+.section-title{font-weight:500;letter-spacing:1.4px;line-height:1.9}
+.about-section{padding-top:100px;padding-bottom:98px;gap:95px}
+.about-text p{line-height:2.3}
+.topics span{border:0;border-left:1px solid #bdc2b3;border-radius:0;padding:0 13px;line-height:1.3}
+.topics span:first-child{padding-left:0;border:0}
+.books-section{background:#ecece2;padding-top:72px;padding-bottom:80px}
+.book-art{background:#e3e4d7}
+.book:nth-child(even) .book-art{background:#e8e4d9}
+.book-art img{filter:drop-shadow(5px 9px 7px #34382921)}
+.book:hover img{transform:translateY(-5px)}
+.book h3{font-weight:500;letter-spacing:.6px}
+.space-teaser{gap:85px;padding-top:96px;padding-bottom:100px}
+.space-photo img{filter:saturate(.9)}
+footer{background:#354237;color:#e7e7dc}
+.footer-top h2{font-weight:500;letter-spacing:1.5px}
+.footer-top .eyebrow{color:#c4ba99}
+.inner-page h1,article h2,.person h2{font-weight:500}
+.person{background:#eeeee4;border-top:1px solid #7b8774}
+.org div{background:#eeeee4}
+.gallery button{background:#eeeee4}
+.history-photo{margin:0 0 55px}
+.history-photo img{width:100%;max-height:390px;object-fit:cover;object-position:50% 37%}
+.history-photo figcaption{font-size:11px;color:var(--muted);margin-top:12px}
+@media(min-width:1600px){.hero-photo img{height:520px}}
+@media(max-width:1150px){.hero{gap:45px}.hero h1{font-size:47px}.hero-photo img{height:440px}nav{gap:17px}.brand strong{font-size:17px}}
+@media(max-width:900px){.header-inner{height:82px}nav{top:82px}.hero{gap:30px;padding-top:55px;padding-bottom:55px}.hero h1{font-size:39px;letter-spacing:2px}.hero-photo img{height:430px}.hero-actions{gap:19px}.about-section{gap:45px}.section-title{font-size:27px}.space-teaser{gap:35px}}
+@media(max-width:600px){.brand-mark{width:30px;height:38px}.brand-mark svg{width:30px;height:30px}.brand strong{font-size:15px;letter-spacing:.8px}.brand small{font-size:6.6px}.hero{gap:29px;padding-top:38px;padding-bottom:40px}.hero .eyebrow{font-size:10px;letter-spacing:2px}.hero h1{font-size:43px;letter-spacing:3px;line-height:1.6;margin:22px 0}.hero p{font-size:12px;letter-spacing:.2px}.hero-actions{margin:27px 0 10px;gap:21px;flex-direction:row}.button{padding:11px 16px;font-size:11px}.hero-photo img{height:310px;object-position:46% 50%;border-radius:0}.hero-photo:after{right:-8px}.photo-label{bottom:66px;right:16px;padding:13px 9px;font-size:9px}.hero-photo figcaption{font-size:9px;letter-spacing:0}.pathways{padding:0}.pathways h2{font-size:18px}.about-section{padding-top:57px;padding-bottom:57px;gap:20px}.section-title{font-size:27px;letter-spacing:1px}.books-section{padding:48px 0}.topics{gap:10px 0}.topics span{font-size:10px;padding:0 9px}.space-teaser{padding-top:58px;padding-bottom:58px;gap:30px}.footer-top h2{font-size:25px}.inner-page h1{font-size:30px}.history-photo img{max-height:270px}}
