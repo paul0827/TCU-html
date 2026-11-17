@@ -1,7 +1,7 @@
 const $=s=>document.querySelector(s);
 const escapeHtml=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const card=b=>`<a class="book" href="#book/${b.n}" aria-label="查看${b.title}"><div class="book-art"><img src="assets/${b.image}" alt="${b.title}書封" loading="lazy"><span class="book-arrow">↗</span></div><small>印證叢書 ${b.n}</small><h3>${b.title}</h3><p>${b.sub||b.theme}</p></a>`;
-$('#featured').innerHTML=[books[1],books[2],books[3],books[4]].map(card).join('');
+$('#featured').innerHTML=books.slice(1,5).map(card).join('');
 let filter='全部';
 function renderBooks(){const q=$('#search').value.trim().toLowerCase();const results=books.filter(b=>(filter==='全部'||b.cat===filter)&&`${b.title}${b.sub}${b.n}${b.theme}印證叢書`.toLowerCase().includes(q));$('#all-books').innerHTML=results.map(card).join('');$('#result-count').textContent=`共 ${results.length} 本出版品` ;$('#empty').hidden=results.length>0;}
 document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{filter=b.dataset.filter;document.querySelectorAll('[data-filter]').forEach(x=>{x.classList.toggle('active',x===b);x.setAttribute('aria-pressed',String(x===b))});renderBooks()}));$('#search').addEventListener('input',renderBooks);renderBooks();

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#f0f3e9"><title>維護後台｜慈濟學教學研究中心</title><link rel="stylesheet" href="admin.css"></head>
+<body>
+<section id="login" class="login" hidden>
+  <form id="login-form" class="login-card" autocomplete="off">
+    <p class="eyebrow">SITE MAINTENANCE</p>
+    <h1>維護後台</h1>
+    <p class="login-lead">慈濟學教學研究中心網站</p>
+    <label for="login-user">帳號</label>
+    <input id="login-user" name="user" required autocapitalize="none" spellcheck="false">
+    <label for="login-pass">密碼</label>
+    <input id="login-pass" name="pass" type="password" required>
+    <p id="login-error" class="error" role="alert"></p>
+    <button class="button" type="submit">登入</button>
+    <a class="quiet-link" href="index.html">← 回到網站</a>
+  </form>
+</section>
+
+<div id="app" hidden>
+  <header class="bar">
+    <div class="wrap bar-inner">
+      <div class="bar-title"><strong>維護後台</strong><span>慈濟學教學研究中心</span></div>
+      <div class="bar-actions">
+        <a class="ghost" href="index.html" target="_blank" rel="noopener">檢視網站 ↗</a>
+        <button id="logout" class="ghost" type="button">登出</button>
+        <button id="save" class="button" type="button" disabled>儲存變更</button>
+      </div>
+    </div>
+  </header>
+  <main class="wrap">
+    <div class="mode"><p id="mode"></p><div class="mode-actions"><button id="export" class="ghost" type="button">匯出 content.js</button><button id="reset" class="ghost danger" type="button" hidden>還原為原始內容</button></div></div>
+    <div class="tabs" role="tablist" aria-label="維護項目">
+      <button role="tab" data-tab="books" aria-selected="true">出版品</button>
+      <button role="tab" data-tab="team" aria-selected="false">核心團隊</button>
+      <button role="tab" data-tab="spaces" aria-selected="false">空間場域</button>
+    </div>
+    <div class="panel-head"><h1 id="panel-title"></h1><button id="add" class="button small" type="button">＋ 新增</button></div>
+    <ul id="list" class="list"></ul>
+    <p id="empty" class="empty" hidden>目前沒有資料，請按「新增」。</p>
+  </main>
+</div>
+
+<dialog id="editor"><form id="editor-form" novalidate>
+  <h2 id="editor-title"></h2>
+  <div id="editor-fields"></div>
+  <p id="editor-error" class="error" role="alert"></p>
+  <div class="dialog-actions"><button id="editor-cancel" class="ghost" type="button">取消</button><button class="button" type="submit">完成</button></div>
+</form></dialog>
+<p id="toast" class="toast" role="status" hidden></p>
+<script src="content.js"></script><script src="overrides.js"></script><script src="admin.js"></script>
+</body></html>
