@@ -132,7 +132,7 @@ const schemas = {
   team: {
     label: '核心團隊', unit: '位', key: 'id',
     title: p => `${p.name} ${p.title}`, meta: p => p.role,
-    blank: () => ({ id: '', name: '', title: '', role: '', english: '', image: '', phone: '', dial: '', ext: '', email: '',
+    blank: () => ({ id: '', name: '', title: '', role: '', english: '', image: '', photo: 'crop', phone: '', dial: '', ext: '', email: '',
       sections: ['職務', '學歷', '經歷', '學術專長'].map(title => ({ title, items: [] })) }),
     fields: [
       { name: 'id', label: '代號', required: true, slug: true, hint: '用於網址，例如 cheng；僅限英數字，不可重複。' },
@@ -144,6 +144,7 @@ const schemas = {
       { name: 'ext', label: '分機' },
       { name: 'email', label: '電子郵件' },
       { name: 'image', label: '照片', type: 'image', required: true },
+      { name: 'photo', label: '照片呈現方式', type: 'select', options: [['crop', '直式裁切（預設）'], ['round', '圓形頭像'], ['full', '完整照片（不裁切）']] },
       { name: 'sections', label: '簡歷區塊', type: 'sections', hint: '每行一個項目。「學術專長」會固定顯示在姓名下方，請保留此區塊。' }
     ]
   },
@@ -262,8 +263,10 @@ function buildField(field, value, id) {
   if (field.type === 'image') return imageField(field, value || '', id);
   if (field.type === 'sections') return sectionsField(value || []);
   if (field.type === 'select') {
-    const options = field.options.includes(value) || !value ? field.options : [value, ...field.options];
-    const el = h('select', { id }, options.map(o => h('option', { value: o, selected: o === value }, o)));
+    const options = field.options.map(o => (Array.isArray(o) ? o : [o, o]));
+    if (value && !options.some(([v]) => v === value)) options.unshift([value, value]);
+    const current = value || options[0][0];
+    const el = h('select', { id }, options.map(([v, label]) => h('option', { value: v, selected: v === current }, label)));
     return { el, get: () => el.value };
   }
   if (field.type === 'textarea') {

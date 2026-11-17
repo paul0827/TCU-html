@@ -119,3 +119,7 @@ header nav{font-size:15px;gap:22px}
  .site-search-form input{flex:1 1 180px;font-size:16px}
 }
 @media(max-width:360px){.brand strong{font-size:15px}.header-inner{gap:8px}.brand{gap:7px}.brand-mark,.brand-mark svg{width:24px}.hero h1{font-size:38px;letter-spacing:2px}}
+
+/* 核心團隊照片呈現方式：圓形頭像／完整照片（預設為直式裁切） */
+.team-grid .person-heading img.photo-round{aspect-ratio:1/1;border-radius:50%;object-position:50% 20%}
+.team-grid .person-heading img.photo-full{aspect-ratio:auto;height:auto;object-fit:contain}
